@@ -31,32 +31,38 @@ For each method, keep it short. Include only:
 - output (what it returns)
 - return type
 
-Method 1:
-- description:
-- inputs:
-- output:
-- return type:
+Method 1: Compute the volume
+- description: This method will multiply the length by the width
+- inputs: Length, width
+- output: length * width
+- return type: Double
 
-Method 2:
+Method 2: This method will multiply the length by the height
 - description:
-- inputs:
-- output:
-- return type:
+- inputs: Length, Height
+- output:Length * Height
+- return type: Double
 
-Method 3:
+Method 3: This method will multiply the width by the height
 - description:
-- inputs:
-- output:
-- return type:
+- inputs: width, height
+- output: width * height
+- return type: Double
 
-Method 4:
-- description:
-- inputs:
-- output:
-- return type:
+Method 4: Surface area (Size Factor)
+- description: Adds all inputs together and multiplies by 2
+- inputs: Lw, Lh, Wh
+- output: 2(Lw + Lh + Wh)
+- return type: int
 
 Method 5:
-- description:
-- inputs:
-- output:
-- return type:
+- description: Discount 
+- inputs: sizeFactor
+- output: True or False
+- return type: Boolean
+
+Method 6:
+- description: Perform cost calculation
+- inputs: Base cost, weight, weightRate, sizeFactor, sizeRate
+- output: finalCost
+- return type: double
