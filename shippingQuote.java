@@ -14,8 +14,8 @@ public class shippingQuote {
         double lengthHeight = computeVolumeLH( length, height);
         double widthHeight = computeVolumeWH( width, height);
         int sizeFactor = surfaceArea( lengthWidth, lengthHeight, widthHeight);
-        boolean discount = discountApplied( sizeFactor);
-        double finalCost = finalCalculation( baseCost, weight, weightRate, sizeFactor, sizeFactor);
+        boolean discount = discountStatus( sizeFactor);
+        double finalCost = finalCalculation( baseCost, weight, weightRate, sizeFactor, sizeRate);
 
         System.out.println("Your total shipping cost is: $" + finalCost);
 
@@ -35,14 +35,16 @@ public class shippingQuote {
     }
 
     public static int surfaceArea(double lengthWidth, double lengthHeight, double widthHeight){
-        return 2 * (lengthWidth + lengthHeight + widthHeight);
+        return (int) (2 * (lengthWidth + lengthHeight + widthHeight));
     }
 
-    public static boolean discount(int sizeFactor) {
-        return ;
+    public static boolean discountStatus(int sizeFactor) {
+        return false;
     }
 
-    public static double finalCost(int baseCost, int weight, double weightRate; int sizeFactor, double sizeFactor) {
-        
+    public static double finalCalculation(int baseCost, double weight, double weightRate, int sizeFactor, double sizeRate) {
+        double weightTotal = weight * weightRate;
+        double sizeTotal = sizeFactor * sizeRate;
+        return (double) (baseCost + weightTotal + sizeTotal);
     }
 }
