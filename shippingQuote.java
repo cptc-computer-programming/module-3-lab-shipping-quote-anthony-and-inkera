@@ -9,15 +9,17 @@ public class shippingQuote {
         int baseCost = 5;
         double weightRate = 2.5;
         double sizeRate = 3.25;
+        int costEffective = 1000;
 
         double lengthWidth = computeVolumeLW( length, width);
         double lengthHeight = computeVolumeLH( length, height);
         double widthHeight = computeVolumeWH( width, height);
         int sizeFactor = surfaceArea( lengthWidth, lengthHeight, widthHeight);
-        boolean discount = discountStatus( sizeFactor);
         double finalCost = finalCalculation( baseCost, weight, weightRate, sizeFactor, sizeRate);
+        boolean discount = discountStatus( costEffective, finalCost);
 
         System.out.println("Your total shipping cost is: $" + finalCost);
+        System.out.println("Is it cost effective? " + discount);
 
     }
 
@@ -38,8 +40,8 @@ public class shippingQuote {
         return (int) (2 * (lengthWidth + lengthHeight + widthHeight));
     }
 
-    public static boolean discountStatus(int sizeFactor) {
-        return false;
+    public static boolean discountStatus(int costEffective, double finalCost) {
+        return finalCost <= costEffective;
     }
 
     public static double finalCalculation(int baseCost, double weight, double weightRate, int sizeFactor, double sizeRate) {
